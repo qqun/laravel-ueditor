@@ -19,6 +19,11 @@ UEditor是由百度web前端研发部开发所见即所得富文本web编辑器�
 * 又拍云
 
 默认为本地存储，存储路径为 public/uploads
+
+部分内容参考了 [stevenyangecho/laravel-u-editor](https://github.com/stevenyangecho/laravel-u-editor) 感谢.
+
+更多的是为了自用方便.
+
 ## 安装
 
 需要PHP版本 5.6+，项目已经安装Composer
