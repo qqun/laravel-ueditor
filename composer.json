@@ -1,0 +1,33 @@
+{
+    "name": "QQun/laravel-ueditor",
+    "type": "library",
+    "description": "laravel-ueditor",
+    "keywords": [
+        "ueditor",
+        "laravel",
+        "laravel5 editor"
+    ],
+    "homepage": "https://github.com/QQun",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": ":QQun",
+            "email": ":lanq98@gmail.com",
+            "homepage": "",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1|5.2.x",
+        "qiniu/php-sdk": "7.*",
+        "php" : "~5.6|~7.0",
+        "ext-fileinfo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "QQun\\UEditor\\": "src/"
+        }
+    },
+    "minimum-stability":"dev",
+    "prefer-stable":true
+}
