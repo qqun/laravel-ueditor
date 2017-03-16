@@ -56,7 +56,7 @@ composer update
 修改config/app.php，在providers里增加：
 
 ``` php
-qqun\UEditor\UEditorServiceProvider::class,
+QQun\UEditor\UEditorServiceProvider::class,
 ```
 
 然后运行
