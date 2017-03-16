@@ -1,5 +1,5 @@
 {
-    "name": "QQun/laravel-ueditor",
+    "name": "qqun/laravel-ueditor",
     "type": "library",
     "description": "laravel-ueditor",
     "keywords": [
@@ -7,11 +7,11 @@
         "laravel",
         "laravel5 editor"
     ],
-    "homepage": "https://github.com/QQun",
+    "homepage": "https://github.com/qqun",
     "license": "MIT",
     "authors": [
         {
-            "name": ":QQun",
+            "name": "qqun",
             "email": ":lanq98@gmail.com",
             "homepage": "",
             "role": "Developer"

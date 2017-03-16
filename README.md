@@ -28,13 +28,13 @@ UEditor是由百度web前端研发部开发所见即所得富文本web编辑器�
 运行：
 
 ``` bash
-$ composer require QQun/laravel-ueditor
+$ composer require qqun/laravel-ueditor
 ```
 
 或者修改composer.json 增加：
 
 ```
-"QQun/laravel-ueditor": "*"
+"qqun/laravel-ueditor": "*"
 ```
 
 
@@ -56,7 +56,7 @@ composer update
 修改config/app.php，在providers里增加：
 
 ``` php
-QQun\UEditor\UEditorServiceProvider::class,
+qqun\UEditor\UEditorServiceProvider::class,
 ```
 
 然后运行
@@ -175,17 +175,17 @@ Route::get("ueditor", function(){
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/QQun/laravel-ueditor.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/qqun/laravel-ueditor.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/QQun/laravel-ueditor/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/QQun/laravel-ueditor.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/QQun/laravel-ueditor.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/QQun/laravel-ueditor.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/qqun/laravel-ueditor/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/qqun/laravel-ueditor.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/qqun/laravel-ueditor.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/qqun/laravel-ueditor.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/QQun/laravel-ueditor
-[link-travis]: https://travis-ci.org/QQun/laravel-ueditor
-[link-scrutinizer]: https://scrutinizer-ci.com/g//QQun/laravel-ueditor/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g//QQun/laravel-ueditor
-[link-downloads]: https://packagist.org/packages/QQun/laravel-ueditor
-[link-author]: https://github.com/QQun
+[link-packagist]: https://packagist.org/packages/qqun/laravel-ueditor
+[link-travis]: https://travis-ci.org/qqun/laravel-ueditor
+[link-scrutinizer]: https://scrutinizer-ci.com/g//qqun/laravel-ueditor/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g//qqun/laravel-ueditor
+[link-downloads]: https://packagist.org/packages/qqun/laravel-ueditor
+[link-author]: https://github.com/qqun
 [link-contributors]: ../../contributors
