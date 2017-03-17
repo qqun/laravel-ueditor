@@ -46,7 +46,7 @@ class UEditorServiceProvider extends RouteServiceProvider
         $filePath = public_path() . $file;
 
         if (!\File::exists($filePath)) {
-            $file = "/editor/lang/zh-CN/zh-CN.js";
+            $file = "/ueditor/lang/zh-cn/zh-cn.js";
         }
 
 
