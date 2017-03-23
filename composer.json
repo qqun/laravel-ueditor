@@ -27,7 +27,6 @@
         "psr-4": {
             "QQun\\UEditor\\": "src/"
         }
-    },
-    "minimum-stability":"dev",
-    "prefer-stable":true
+    }
+    
 }

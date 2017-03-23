@@ -114,6 +114,13 @@ class Controller extends BaseController
                         $config['fileManagerListSize'],
                         $config['fileManagerListPath'],
                         $request))->getList();
+                }else if(config('Ueditor.core.mode') == Upload::UPYUN_MODEL){
+                    $result = with(new ListsUpyun(
+                        $config['fileManagerAllowFiles'],
+                        $config['fileManagerListSize'],
+                        $config['fileManagerListPath'],
+                        $request
+                    ))->getList();
                 }
 
                 break;
