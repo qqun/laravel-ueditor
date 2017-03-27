@@ -28,7 +28,7 @@ return [
             // 'middleware' => 'auth',
         ],
 
-        'mode' => 'local',//上传方式,local 为本地   qiniu 为七牛
+        'mode' => 'local',//上传方式,local 为本地   qiniu 为七牛  upyun 为又拍云  scs 为新浪云
         'baseurl' => '',
 
         //七牛配置,若mode='qiniu',以下为必填.
@@ -54,6 +54,12 @@ return [
             'endpoint' => null,   // 默认自动选择
             'timeout' => 60,     // 默认 30
             'url' => 'http://xxx.b0.upaiyun.com'    //
+        ],
+        'scs'   =>  [
+            'bucket'    =>  '', // 新浪云 SinaCloudStorage bucket
+            'accessKey' =>  '',
+            'secretKey' =>  '',
+            'url'   =>  'http://cdn.sinacloud.net',
         ]
     ],
     /**

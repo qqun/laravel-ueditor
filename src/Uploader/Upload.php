@@ -30,6 +30,7 @@ abstract class Upload
     const LOCAL_MODEL = 'local';
     const QINIU_MODEL = 'qiniu';
     const UPYUN_MODEL = 'upyun';
+    const SCS_MODEL = 'scs';
 
     abstract function doUpload(); //抽象方法,上传核心方法
 

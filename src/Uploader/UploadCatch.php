@@ -9,7 +9,7 @@ namespace QQun\UEditor\Uploader;
  */
 class UploadCatch extends Upload
 {
-    use UploadQiniu, UploadUpyun;
+    use UploadQiniu, UploadUpyun, UploadSCS;
 
     public function doUpload()
     {
@@ -93,6 +93,18 @@ class UploadCatch extends Upload
                 //本地保存
                 file_put_contents($this->filePath, $img);
                 return $this->uploadUpyun('/' . dirname($this->filePath) . '/' . $this->fileName, $img);
+
+            } catch (FileException $exception) {
+                $this->stateInfo = $this->getStateInfo("ERROR_WRITE_CONTENT");
+                return false;
+            }
+
+        } else if (config('Ueditor.core.mode') == self::SCS_MODEL) {
+
+            try {
+                //本地保存
+                file_put_contents($this->filePath, $img);
+                return $this->uploadSCS($this->filePath . '/' . $this->fileName, $img);
 
             } catch (FileException $exception) {
                 $this->stateInfo = $this->getStateInfo("ERROR_WRITE_CONTENT");

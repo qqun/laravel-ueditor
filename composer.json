@@ -20,6 +20,7 @@
     "require": {
         "illuminate/support": "~5.1|5.2.x",
         "qiniu/php-sdk": "7.*",
+        "cloudmario/scs": "dev-master",
         "php" : "~5.6|~7.0",
         "ext-fileinfo": "*"
     },

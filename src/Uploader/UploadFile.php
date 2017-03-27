@@ -1,6 +1,7 @@
 <?php
 
 namespace QQun\UEditor\Uploader;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
  *
@@ -11,7 +12,7 @@ namespace QQun\UEditor\Uploader;
  */
 class UploadFile extends Upload
 {
-    use UploadQiniu,UploadUpyun;
+    use UploadQiniu, UploadUpyun, UploadSCS;
 
     public function doUpload()
     {
@@ -71,9 +72,9 @@ class UploadFile extends Upload
             $content = file_get_contents($this->file->getPathname());
             return $this->uploadQiniu($this->filePath, $content);
 
-        }else if(config('Ueditor.core.mode') == self::UPYUN_MODEL){
+        } else if (config('Ueditor.core.mode') == self::UPYUN_MODEL) {
 
-            try{
+            try {
 
                 $content = $this->file->getPathname();
                 $content = file_get_contents($content);
@@ -81,13 +82,24 @@ class UploadFile extends Upload
                 //本地保存
                 $this->file->move(dirname($this->filePath), $this->fileName);
 
-                return $this->uploadUpyun('/'.dirname($this->filePath).'/'.$this->fileName, $content);
+                return $this->uploadUpyun('/' . dirname($this->filePath) . '/' . $this->fileName, $content);
 
             } catch (FileException $exception) {
                 $this->stateInfo = $this->getStateInfo("ERROR_WRITE_CONTENT");
                 return false;
             }
 
+        } else if (config('Ueditor.core.mode') == self::SCS_MODEL) {
+            try {
+                $content = $this->file->getPathname();
+                $content = file_get_contents($content);
+                //本地保存
+                $this->file->move(dirname($this->filePath), $this->fileName);
+                return $this->uploadSCS($this->filePath , $content);
+            } catch (FileException $e) {
+                $this->stateInfo = $this->getStateInfo("ERROR_WRITE_CONTENT");
+                return false;
+            }
         } else {
             $this->stateInfo = $this->getStateInfo("ERROR_UNKNOWN_MODE");
             return false;

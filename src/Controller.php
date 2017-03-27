@@ -98,6 +98,13 @@ class Controller extends BaseController
                         $config['imageManagerListPath'],
                         $request
                     ))->getList();
+                }else if(config('Ueditor.core.mode') == Upload::SCS_MODEL){
+                    $result = with(new ListsSCS(
+                        $config['imageManagerAllowFiles'],
+                        $config['imageManagerListSize'],
+                        $config['imageManagerListPath'],
+                        $request
+                    ))->getList();
                 }
                 break;
             /* 列出文件 */
@@ -116,6 +123,13 @@ class Controller extends BaseController
                         $request))->getList();
                 }else if(config('Ueditor.core.mode') == Upload::UPYUN_MODEL){
                     $result = with(new ListsUpyun(
+                        $config['fileManagerAllowFiles'],
+                        $config['fileManagerListSize'],
+                        $config['fileManagerListPath'],
+                        $request
+                    ))->getList();
+                }else if(config('Ueditor.core.mode') == Upload::SCS_MODEL){
+                    $result = with(new ListsSCS(
                         $config['fileManagerAllowFiles'],
                         $config['fileManagerListSize'],
                         $config['fileManagerListPath'],
