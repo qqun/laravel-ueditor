@@ -25,7 +25,10 @@ return [
     */
     'core' => [
         'route' => [
-            // 'middleware' => 'auth',
+            'name' =>  '/ueditor/server',
+            'options'   =>  [
+                'middleware' => 'auth'
+            ]
         ],
 
         'mode' => 'local',//上传方式,local 为本地   qiniu 为七牛  upyun 为又拍云  scs 为新浪云

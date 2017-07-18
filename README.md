@@ -159,6 +159,28 @@ UEditor 公共资源在 public/ueditor 内，可以根据需要自行修改
             ue.execCommand('serverparam', '_token', '{{ csrf_token() }}');
     });
 </script>
+
+或:
+```
+@include('UEditor::head')
+
+<form method="post">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <!-- 加载编辑器的容器 -->
+    <script type="text/plain" id="container" name="container">
+    <p>欢迎使用UEditor！</p>
+    </script>
+    <input type="submit" value="提交">
+</form>
+
+<script type="text/javascript">
+    var ue = UE.getEditor('container', {
+            initialFrameHeight : 450,
+    });
+</script>
+```
+
+
 ```
 测试
 

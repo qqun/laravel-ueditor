@@ -1,7 +1,7 @@
 {
     "name": "qqun/laravel-ueditor",
     "type": "library",
-    "description": "laravel for ueditor 支持本地、七牛、又拍文件存储",
+    "description": "laravel for ueditor 支持本地、七牛、又拍云、新浪云文件存储",
     "keywords": [
         "ueditor",
         "laravel",

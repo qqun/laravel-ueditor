@@ -49,6 +49,10 @@ class UEditorServiceProvider extends RouteServiceProvider
             $file = "/ueditor/lang/zh-cn/zh-cn.js";
         }
 
+        if(!app()->runningInConsole()){
+            $this->registerRoute($route);
+        }
+
 
         \View::share('UeditorLangFile', $file);
     }
@@ -67,17 +71,18 @@ class UEditorServiceProvider extends RouteServiceProvider
 
     }
 
-    public function map()
+    /**
+     * Register routes.
+     *
+     * @param $router
+     */
+    protected function registerRoute($router)
     {
-        $router = app('router');
-
-        $config = config('Ueditor.core.route', []);
-        $config['namespace'] = __NAMESPACE__;
-
-        //定义路由
-        $router->group($config, function ($router) {
-            $router->any('/ueditor/server', 'Controller@server');
-        });
+        if (!$this->app->routesAreCached()) {
+            $router->group(array_merge(['namespace' => __NAMESPACE__], config('ueditor.route.options', [])), function ($router) {
+                $router->any(config('ueditor.route.name', '/ueditor/server'), 'Controller@server');
+            });
+        }
     }
 
 
